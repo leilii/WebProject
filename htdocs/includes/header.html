@@ -1,0 +1,27 @@
+<?php # header.html
+// This page begins the HTML header for the site.
+
+// Start output buffering:
+ob_start();
+
+// Initialize a session:
+
+// Check for a $page_title value:
+if (!isset($page_title)) {
+	$page_title = 'User Dashboard';
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><?php echo $page_title; ?></title>
+	<link rel="stylesheet" href="includes/style.css">
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	
+<div id="Header">User Dashboard</div>
+<div id="Content">
+<!-- End of Header -->

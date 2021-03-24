@@ -1,0 +1,101 @@
+<?php //# Script header.html
+// This page begins the HTML header for the site.
+
+// Start output buffering:
+ob_start();
+
+// Initialize a session:
+session_start();
+
+// Check for a $page_title value:
+if (!isset($page_title)) {
+	$page_title = 'My Dashboard';
+}
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><?php echo $page_title; ?></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="includes/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+</head>
+
+<body>
+    
+  <nav class="navbar navbar-expand-lg navbar-light" id="header">
+    <div id="RazmAraCarpet">
+      <a  href="index.html"><img  src="images/RazmAra2.jpg" alt="lego"> </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.php">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Categories.php">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Categories.php">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Categories.php">Contact us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+           <span class= "glyphicon glyphicon-log-in"></span>Login
+          </a>
+          <div id="profiledropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" onclick="document.getElementById('id02').style.display='block'">Log in</a>
+            <a class="dropdown-item" onclick="document.getElementById('id01').style.display='block'">Sign up</a>
+          </div>
+        </li>
+      </ul>
+
+      <form id="search_form" class="form-inline" action="process/process_search_page.php" method="GET">
+        <input id="search_term" name="search_term" type="text" class="search_term" placeholder="Search"
+          aria-label="Search" onkeyup="search(this.value)">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        <div id="search_results" class="panel panel-default"></div>
+      </form>
+
+    </div>
+    
+  </nav>
+
+    <div id="Header">Persian Carpet</div>
+    <div id="Content">
+        <!-- End of Header -->
